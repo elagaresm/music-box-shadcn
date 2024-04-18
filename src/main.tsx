@@ -4,14 +4,14 @@ import "./index.css";
 import App from "./App";
 import { createHashRouter, RouterProvider } from "react-router-dom";
 import ErrorPage from "./pages/error-page";
-import Main from "./components/main";
+import Home from "./components/home";
 
 const router = createHashRouter([
   {
     path: "/",
     element: <App />,
     errorElement: <ErrorPage />,
-    children: [{ index: true, element: <Main /> }],
+    children: [{ index: true, element: <Home /> }],
   },
 ]);
 

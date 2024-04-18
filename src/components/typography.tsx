@@ -61,8 +61,8 @@ export function TypographySmall({
   );
 }
 
-export function TypographyMuted({ children }: { children: React.ReactNode }) {
-  return <p className="text-sm text-muted-foreground">{children}</p>;
+export function TypographyMuted({ children, className }: { children: React.ReactNode, className?: string }) {
+  return <p className={cn("text-sm text-muted-foreground", className)}>{children}</p>;
 }
 
 export function TypographyLarge({ children }: { children: React.ReactNode }) {

@@ -80,7 +80,7 @@ export function Sidebar({ className }: React.HTMLAttributes<HTMLDivElement>) {
 
           {/* Scroll Area */}
 
-          <ScrollArea className="h-[500px] px-1">
+          <ScrollArea className="h-[300px] px-1">
             <div className="space-y-1 p-2">
               {queue.map((song, index) => (
                 <Button
