@@ -1,19 +1,24 @@
+import { cn } from "@/lib/utils";
 import { ModeToggle } from "./dark-mode-toggle";
-import { CommandDialogDemo } from "./search";
+import { SearchDialog } from "./search";
 import { TypographyH3, TypographySmall } from "./typography";
-import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import { AreaChart, BadgeDollarSign } from "lucide-react";
 
-export default function Header(): JSX.Element {
+export default function Header({
+  className,
+}: React.HTMLAttributes<HTMLDivElement>): JSX.Element {
   return (
-    <header className="border-b w-full py-2 px-4 flex justify-between items-center">
-      <TypographyH3 className="flex items-center gap-3">
-        Music Box <Badge>Pro</Badge>
-      </TypographyH3>
+    <header
+      className={cn(
+        "border-b w-full py-2 px-4 flex justify-between items-center",
+        className,
+      )}
+    >
+      <Title />
 
       <div className="flex gap-3">
-        <CommandDialogDemo />
+        <SearchDialog />
         <Icons />
       </div>
     </header>
@@ -32,5 +37,16 @@ function Icons() {
         <AreaChart />
       </Button>
     </>
+  );
+}
+
+function Title() {
+  return (
+    <TypographyH3 className="flex items-center gap-3 relative">
+      Music Box
+      <TypographySmall className="absolute right-0 top-[-1px] text-primary rounded">
+        Pro
+      </TypographySmall>
+    </TypographyH3>
   );
 }

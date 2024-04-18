@@ -1,7 +1,11 @@
-export default function Main(): JSX.Element {
+import { cn } from "@/lib/utils";
+
+export default function Main({
+  className,
+}: React.HTMLAttributes<HTMLDivElement>): JSX.Element {
   return (
-    <header>
+    <div className={cn("", className)}>
       <p>Hello world!</p>
-    </header>
+    </div>
   );
 }

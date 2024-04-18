@@ -15,8 +15,9 @@ import {
   CommandSeparator,
   CommandShortcut,
 } from "@/components/ui/command";
+import { Button } from "./ui/button";
 
-export function CommandDialogDemo() {
+export function SearchDialog() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -33,9 +34,9 @@ export function CommandDialogDemo() {
 
   return (
     <>
-      <button onClick={() => setOpen(true)}>
+      <Button variant="ghost" onClick={() => setOpen(true)}>
         <Search />
-      </button>
+      </Button>
       <CommandDialog open={open} onOpenChange={setOpen}>
         <CommandInput placeholder="Busca por cancion o artista..." />
         <CommandList>

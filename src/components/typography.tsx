@@ -21,7 +21,7 @@ export function TypographyH3({
   className,
 }: {
   children: React.ReactNode;
-  className: string;
+  className?: string;
 }) {
   return (
     <h3
@@ -47,8 +47,18 @@ export function TypographyP({ children }: { children: React.ReactNode }) {
   return <p className="leading-7 [&:not(:first-child)]:mt-6">{children}</p>;
 }
 
-export function TypographySmall({ children }: { children: React.ReactNode }) {
-  return <small className="text-sm font-medium leading-none">{children}</small>;
+export function TypographySmall({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <small className={cn("text-sm font-medium leading-none", className)}>
+      {children}
+    </small>
+  );
 }
 
 export function TypographyMuted({ children }: { children: React.ReactNode }) {
