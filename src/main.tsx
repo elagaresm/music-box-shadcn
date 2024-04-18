@@ -4,18 +4,19 @@ import "./index.css";
 import App from "./App";
 import { createHashRouter, RouterProvider } from "react-router-dom";
 import ErrorPage from "./pages/error-page";
+import Main from "./components/main";
 
 const router = createHashRouter([
   {
     path: "/",
     element: <App />,
     errorElement: <ErrorPage />,
-    children: [{ index: true, element: <App /> }],
+    children: [{ index: true, element: <Main /> }],
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>,
 );
