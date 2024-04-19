@@ -1,3 +1,4 @@
+import { CarouselDemo } from "./carousel-demo";
 import { TypographyH2, TypographyMuted } from "./typography";
 
 export default function Home(): JSX.Element {
@@ -12,7 +13,9 @@ export default function Home(): JSX.Element {
         </TypographyH2>
       </div>
 
-      <div className="flex px-2"></div>
+      <div className="flex flex-wrap justify-center">
+        <CarouselDemo />
+      </div>
     </div>
   );
 }
