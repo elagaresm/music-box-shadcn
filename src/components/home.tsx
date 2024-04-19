@@ -1,17 +1,18 @@
-import { cn } from "@/lib/utils";
 import { TypographyH2, TypographyMuted } from "./typography";
 
-export default function Home({
-  className,
-}: React.HTMLAttributes<HTMLDivElement>): JSX.Element {
+export default function Home(): JSX.Element {
   return (
-    <div className={cn("h-full px-4 py-6", className)}>
-      <div className="h-full">
+    <div className="h-full w-full px-4 py-6">
+      <div>
         <TypographyH2>
           Populares
-          <TypographyMuted className="font-normal">Artistas populares del momento</TypographyMuted>
+          <TypographyMuted className="font-normal my-1">
+            Artistas del momento
+          </TypographyMuted>
         </TypographyH2>
       </div>
+
+      <div className="flex px-2"></div>
     </div>
   );
 }
